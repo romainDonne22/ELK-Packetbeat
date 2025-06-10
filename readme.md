@@ -12,22 +12,45 @@ Projet indiviuel
 
 
 
-docker-compose up -d
+# Projet Sécurité : ELK + Packetbeat
 
-J'ai eu des soucis de permissions sur le fichier packetbeat.yml
-il est stocker chez moi sur /home/rom
-si vous travaillez sur WSL il faut copier le fichier sur un repertoire ou vous pouvez changer les droits
-puis faire : 
-cp -r /mnt/c/Users/romd3/OneDrive/Documents/Telecom/707Securite/projet/packetbeat/packetbeat.yml ~/
-cd ~
+## Commandes utiles :  
+  
+J'ai eu des soucis de permissions sur le fichier packetbeat.yml (je travaille sous Windows / WSL)  
+il est stocké chez moi sur /home/rom, il faut copier le fichier sur un repertoire ou on peut changer les droits :  
+```sh 
+cp -r /mnt/c/Users/romd3/OneDrive/Documents/Telecom/707Securite/projet ~/
+cd ~/projet/packetbeat
 chmod 644 ./packetbeat.yml
-puis modifier le docker compose dans la partie volume de packetbeat mettre votre repertoire
+```
+
+Lancer le docker comose depuis le repertoire projet :  
+```sh 
+cd ..
+docker-compose up -d
+```
+
+Lancer le PCAP :
+```sh
+docker exec -it packetbeat bash #rentrer dans le bash du docker packbeat
+ls -l /usr/share/packetbeat/packetbeat.yml #vérifier que le .yml est bien présent
+ls -l /pcap #vérifier que le dossier pcap est bien présent
+curl http://elasticsearch:9200 #écouter sur le bon port, lance les data dans ELK
+cat /usr/share/packetbeat/packetbeat.yml #si besoin ouvrir le fichier
+```
+  
+docker-compose restart packetbeat  
 
 
-docker exec -it packetbeat bash
-ls -l /usr/share/packetbeat/packetbeat.yml
-ls -l /pcap
-curl http://elasticsearch:9200
-cat /usr/share/packetbeat/packetbeat.yml
+## Arborescence du projet
 
-docker-compose restart packetbeat
+
+
+## Dashboard  
+graph 1 : Nombre de paquet  
+graph 2 : client.port  
+graph 3 : dns.id
+graph 4 : event.type
+network.community_id  
+related.ip  
+source.port  
