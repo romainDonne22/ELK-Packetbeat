@@ -22,7 +22,7 @@ projet/
 │   ├── test.pcap                    # Petit fichier de test  
 │   └── 4SICS-GeekLounge-151022.pcap # PCAP principal à analyser  
 ├── dashboards/                      # JSON exportés de Kibana  
-│   └── http_analysis_dashboard.json  
+│   └── export.ndjson    
 └── .gitignore                       # Fichiers ignorés (trop volumineux)  
 
 
