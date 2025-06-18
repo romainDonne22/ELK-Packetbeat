@@ -53,13 +53,30 @@ cat /usr/share/packetbeat/packetbeat.yml #si besoin ouvrir le fichier (facultati
   
 
 ## Dashboard  
-graph 1 : Nombre de paquet  
-graph 2 : client.port  
-graph 3 : dns.id
-graph 4 : event.type
-network.community_id  
-related.ip  
-source.port  
+graph 1 : Visualisation des paquets indexés au fil de l'eau
+
+![Demo](./assets/graphana-timestamp.png)
+
+graph 2 : Nombre d'enregistrement au cours du temps
+
+![Demo](./assets/graphana-recordsOverTimestamp.png)
+
+graph 3 : Nombre d'enregistrement par ports
+
+![Demo](./assets/graphana-recordByPorts.png)
+
+graph 4 : Top 10 des DNS avec le plus d'enregistrement
+
+![Demo](./assets/graphana-top10DNSrecords.png)
+
+graph 5 : Nombre d'enregistrement par IP
+
+![Demo](./assets/graphana-recordByIP.png)
+
+graph 6 : Ratio d'enregistrement par type
+
+![Demo](./assets/graphana-recordType.png)
+ 
 
 ## Limitations :
 Sur les versions récentes de Packetbeat :  
