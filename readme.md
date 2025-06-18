@@ -18,7 +18,7 @@ projet/
 ├── docker-compose.yml               # Lancement des conteneurs ELK + Packetbeat  
 ├── packetbeat.yml                   # Configuration de Packetbeat  
 ├── readme.md                        # Documentation du projet  
-├── assets/                          # Contient les captures d'écran pour le readme
+├── assets/                          # Contient les captures d'écran pour le readme  
 ├── PCAP/                            # Répertoire contenant les fichiers .pcap  
 │   ├── test.pcap                    # Petit fichier de test  
 │   └── 4SICS-GeekLounge-151022.pcap # PCAP principal à analyser  
